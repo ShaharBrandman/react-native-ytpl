@@ -1,4 +1,4 @@
-# node-ytpl
+# react-native-ytpl
 [![NPM version](https://img.shields.io/npm/v/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/react-native-ytpl)
 [![NPM downloads](https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/react-native-ytpl)
 [![Discord](https://img.shields.io/discord/484464227067887645.svg)](https://discord.gg/V3vSCs7)
