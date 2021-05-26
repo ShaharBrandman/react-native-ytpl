@@ -1,9 +1,9 @@
 # node-ytpl
-[![NPM version](https://img.shields.io/npm/v/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
-[![NPM downloads](https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/ytpl)
-[![codecov](https://codecov.io/gh/timeforaninja/node-ytpl/branch/master/graph/badge.svg)](https://codecov.io/gh/timeforaninja/node-ytpl)
-[![Known Vulnerabilities](https://snyk.io/test/github/timeforaninja/node-ytpl/badge.svg)](https://snyk.io/test/github/timeforaninja/node-ytpl)
+[![NPM version](https://img.shields.io/npm/v/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/react-native-ytpl)
+[![NPM downloads](https://img.shields.io/npm/dt/ytpl.svg?maxAge=3600)](https://www.npmjs.com/package/react-native-ytpl)
 [![Discord](https://img.shields.io/discord/484464227067887645.svg)](https://discord.gg/V3vSCs7)
+
+# this is a fork & port to react native of [TimeForANinja/node-ytpl](https://github.com/TimeForANinja/node-ytpl)
 
 Simple js only package to resolve YouTube Playlists.
 Does not require any login or Google-API-Key.
@@ -14,10 +14,10 @@ You can contact us for support on our [chat server](https://discord.gg/V3vSCs7)
 # Usage
 
 ```js
-var ytpl = require('ytpl');
+var ytpl = require('react-native-ytpl');
 
 const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg');
-dosth(playlist);
+console.log(playlist);
 ```
 
 
@@ -38,7 +38,7 @@ Attempts to resolve the given playlist id
     * hl[String] -> 2-Digit Code for a Language, defaults to `en` - Allows for localisation of the request
     * limit[Number] -> limits the pulled items, defaults to 100, set to Infinity to get the whole playlist - numbers <1 result in the default being used
     * pages[Number] -> limits the pulled pages, pages contain 100 items, set to Infinity to get the whole playlist - numbers <1 result in the default limit being used - overwrites limit
-    * requestOptions[Object] -> Additional parameters to passed to [miniget](https://github.com/fent/node-miniget), which is used to do the https requests
+    * requestOptions[Object] -> Additional parameters to passed to [miniget](https://github.com/ShaharBrandman/react-native-ytpl/blob/master/lib/miniget.js), which is used to do the https requests
 
 * returns a Promise
 * [Example response](https://github.com/timeforaninja/node-ytpl/blob/master/example/example_output.txt)
@@ -49,14 +49,14 @@ The previous request had to be done using `pages` limitation.
 
 #### Usage
 ```js
-var ytpl = require('ytpl');
+var ytpl = require('react-native-ytpl');
 
 const playlist = await ytpl('UU_aEa8K-EOJ3D6gOs7HcyNg', { pages: 1 });
-display(playlist.items);
+console.log(playlist.items);
 const r2 = ytpl.continueReq(playlist.continuation);
-display(r2.items);
+console.log(r2.items);
 const r3 = ytpl.continueReq(r2.continuation);
-display(r3.items);
+console.log(r3.items);
 ```
 
 * returns a Promise resolving into `{ continuation, items }`
@@ -80,7 +80,7 @@ Returns a playlist ID from a YouTube URL. Can be called with the playlist ID dir
 
 # Install
 
-    npm install --save ytpl
+    npm install --save react-native-ytpl
 
 
 # License
